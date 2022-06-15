@@ -1,0 +1,323 @@
+<html>
+
+<head>
+<style>
+h2 {text-align: center; }
+select {width: 100px; height: 25px; padding: 1px}
+label,select {font-size: 20px;}
+textarea {font-size: 15px;text-align: left; white-space: nowrap;width: 100px;}
+
+</style>
+</head>
+<body>
+    <h2>Network Security With Machine Learning</h2>
+
+<div>
+  <h3>Enter the Network packet parameters:</h3>
+  <form action="/predict" method="POST">
+    <label for="protocol_type">Enter the protocol type:</label>
+	<br>
+	<select name="protocol_type" id="protocol_type" >
+		<option value=tcp>tcp</option>
+		<option value=udp>udp</option>
+		<option value=icmp>icmp</option>
+	</select>
+	<br>	
+	<label for="Service_type">Enter the service type:</label>
+	<br>
+	<select name="service" id="service" >
+		<option value=http>http</option>
+		<option value=other>other</option>
+		<option value=private>private</option>
+		<option value=remote_job>remote_job</option>
+		<option value=ftp_data>ftp_data</option>
+		<option value=name>name</option>
+		<option value=netbios_ns>netbios_ns</option>
+		<option value=eco_i>eco_i</option>
+		<option value=mtp>mtp</option>
+		<option value=telnet>telnet</option>
+		<option value=finger>finger</option>
+		<option value=domain_u>domain_u</option>
+		<option value=supdup>supdup</option>
+		<option value=uucp_path>uucp_path</option>
+		<option value=Z39_50>Z39_50</option>
+		<option value=smtp>smtp</option>
+		<option value=csnet_ns>csnet_ns</option>
+		<option value=uucp>uucp</option>
+		<option value=netbios_dgm>netbios_dgm</option>
+		<option value=urp_i>urp_i</option>
+		<option value=auth>auth</option>
+		<option value=domain>domain</option>
+		<option value=ftp>ftp</option>
+		<option value=bgp>bgp</option>
+		<option value=ldap>ldap</option>
+		<option value=ecr_i>ecr_i</option>
+		<option value=gopher>gopher</option>
+		<option value=vmnet>vmnet</option>
+		<option value=systat>systat</option>
+		<option value=http_443>http_443</option>
+		<option value=efs>efs</option>
+		<option value=whois>whois</option>
+		<option value=imap4>imap4</option>
+		<option value=iso_tsap>iso_tsap</option>
+		<option value=echo>echo</option>
+		<option value=klogin>klogin</option>
+		<option value=link>link</option>
+		<option value=sunrpc>sunrpc</option>
+		<option value=login>login</option>
+		<option value=kshell>kshell</option>
+		<option value=sql_net>sql_net</option>
+		<option value=time>time</option>
+		<option value=hostnames>hostnames</option>
+		<option value=exec>exec</option>
+		<option value=ntp_u>ntp_u</option>
+		<option value=discard>discard</option>
+		<option value=nntp>nntp</option>
+		<option value=courier>courier</option>
+		<option value=ctf>ctf</option>
+		<option value=ssh>ssh</option>
+		<option value=daytime>daytime</option>
+		<option value=shell>shell</option>
+		<option value=netstat>netstat</option>
+		<option value=pop_3>pop_3</option>
+		<option value=nnsp>nnsp</option>
+		<option value=IRC>IRC</option>
+		<option value=pop_2>pop_2</option>
+		<option value=printer>printer</option>
+		<option value=tim_i>tim_i</option>
+		<option value=pm_dump>pm_dump</option>
+		<option value=red_i>red_i</option>
+		<option value=netbios_ssn>netbios_ssn</option>
+		<option value=rje>rje</option>
+		<option value=X11>X11</option>
+		<option value=urh_i>urh_i</option>
+		<option value=http_8001>http_8001</option>
+		<option value=aol>aol</option>
+		<option value=http_2784>http_2784</option>
+		<option value=tftp_u>tftp_u</option>
+		<option value=harvest>harvest</option>
+	</select>
+	<br>
+	<label for="flag">Enter the flag type:</label>
+	<br>
+	<select name="flag" id="flag" >
+		<option value=SF>SF</option>
+		<option value=S0>S0</option>
+		<option value=REJ>REJ</option>
+		<option value=RSTR>RSTR</option>
+		<option value=SH>SH</option>
+		<option value=RSTO>RSTO</option>
+		<option value=S1>S1</option>
+		<option value=RSTOS0>RSTOS0</option>
+		<option value=S3>S3</option>
+		<option value=S2>S2</option>
+		<option value=OTH>OTH</option>
+	</select>
+	<br>
+	
+	<label for="land">Enter the land type:</label>
+	<br>
+	<select name="land" id="land" >
+		<option value=0>0</option>
+		<option value=1>1</option>
+	</select>
+	<br>
+	
+	<label for="logged_in">Enter the logged_in type:</label>
+	<br>
+	<select name="logged_in" id="logged_in" >
+		<option value=1>1</option>
+		<option value=0>0</option>
+	</select>
+	<br>
+	
+	<label for="root_shell">Enter the root_shell type:</label>
+	<br>
+	<select name="root_shell" id="root_shell" >
+		<option value=0>0</option>
+		<option value=1>1</option>
+	</select>
+	<br>
+	
+	<label for="is_host_login">Enter the is_host_login type:</label>
+	<br>
+	<select name="is_host_login" id="is_host_login" >
+		<option value=0>0</option>
+		<option value=1>1</option>
+	</select>
+	<br>
+	
+	<label for="is_guest_login">Enter the is_guest_login type:</label>
+	<br>
+	<select name="is_guest_login" id="is_guest_login" >
+		<option value=0>0</option>
+		<option value=1>1</option>
+	</select>
+	<br>
+	
+	<label for=duration>Enter the duration</label>
+	<br>
+		<textarea name=duration rows='1'>0.0</textarea>
+	<br>
+
+	<label for=src_bytes>Enter the src_bytes</label>
+	<br>
+		<textarea name=src_bytes rows='1'>232</textarea>
+	<br>
+
+	<label for=dst_bytes>Enter the dst_bytes</label>
+	<br>
+		<textarea name=dst_bytes rows='1'>8153</textarea>
+	<br>
+
+	<label for=wrong_fragment>Enter the wrong_fragment</label>
+	<br>
+		<textarea name=wrong_fragment rows='1'>0.0</textarea>
+	<br>
+
+	<label for=urgent>Enter the urgent</label>
+	<br>
+		<textarea name=urgent rows='1'>0.0</textarea>
+	<br>
+
+	<label for=hot>Enter the hot</label>
+	<br>
+		<textarea name=hot rows='1'>0.0</textarea>
+	<br>
+
+	<label for=num_failed_logins>Enter the num_failed_logins</label>
+	<br>
+		<textarea name=num_failed_logins rows='1'>0.0</textarea>
+	<br>
+
+	<label for=num_compromised>Enter the num_compromised</label>
+	<br>
+		<textarea name=num_compromised rows='1'>0.0</textarea>
+	<br>
+
+	<label for=su_attempted>Enter the su_attempted</label>
+	<br>
+		<textarea name=su_attempted rows='1'>0.0</textarea>
+	<br>
+
+	<label for=num_root>Enter the num_root</label>
+	<br>
+		<textarea name=num_root rows='1'>0.0</textarea>
+	<br>
+
+	<label for=num_file_creations>Enter the num_file_creations</label>
+	<br>
+		<textarea name=num_file_creations rows='1'>0.0</textarea>
+	<br>
+
+	<label for=num_shells>Enter the num_shells</label>
+	<br>
+		<textarea name=num_shells rows='1'>0.0</textarea>
+	<br>
+
+	<label for=num_access_files>Enter the num_access_files</label>
+	<br>
+		<textarea name=num_access_files rows='1'>0.0</textarea>
+	<br>
+
+	<label for=count>Enter the count</label>
+	<br>
+		<textarea name=count rows='1'>5</textarea>
+	<br>
+
+	<label for=srv_count>Enter the srv_count</label>
+	<br>
+		<textarea name=srv_count rows='1'>5</textarea>
+	<br>
+
+	<label for=serror_rate>Enter the serror_rate</label>
+	<br>
+		<textarea name=serror_rate rows='1'>0.20</textarea>
+	<br>
+
+	<label for=srv_serror_rate>Enter the srv_serror_rate</label>
+	<br>
+		<textarea name=srv_serror_rate rows='1'>0.20</textarea>
+	<br>
+
+	<label for=rerror_rate>Enter the rerror_rate</label>
+	<br>
+		<textarea name=rerror_rate rows='1'>0.0</textarea>
+	<br>
+
+	<label for=srv_rerror_rate>Enter the srv_rerror_rate</label>
+	<br>
+		<textarea name=srv_rerror_rate rows='1'>0.0</textarea>
+	<br>
+
+	<label for=same_srv_rate>Enter the same_srv_rate</label>
+	<br>
+		<textarea name=same_srv_rate rows='1'>1</textarea>
+	<br>
+
+	<label for=diff_srv_rate>Enter the diff_srv_rate</label>
+	<br>
+		<textarea name=diff_srv_rate rows='1'>0.00</textarea>
+	<br>
+
+	<label for=srv_diff_host_rate>Enter the srv_diff_host_rate</label>
+	<br>
+		<textarea name=srv_diff_host_rate rows='1'>0.0</textarea>
+	<br>
+
+	<label for=dst_host_count>Enter the dst_host_count</label>
+	<br>
+		<textarea name=dst_host_count rows='1'>30</textarea>
+	<br>
+
+	<label for=dst_host_srv_count>Enter the dst_host_srv_count</label>
+	<br>
+		<textarea name=dst_host_srv_count rows='1'>255</textarea>
+	<br>
+
+	<label for=dst_host_same_srv_rate>Enter the dst_host_same_srv_rate</label>
+	<br>
+		<textarea name=dst_host_same_srv_rate rows='1'>1.0</textarea>
+	<br>
+
+	<label for=dst_host_diff_srv_rate>Enter the dst_host_diff_srv_rate</label>
+	<br>
+		<textarea name=dst_host_diff_srv_rate rows='1'>0.00</textarea>
+	<br>
+
+	<label for=dst_host_same_src_port_rate>Enter the dst_host_same_src_port_rate</label>
+	<br>
+		<textarea name=dst_host_same_src_port_rate rows='1'>0.03</textarea>
+	<br>
+
+	<label for=dst_host_srv_diff_host_rate>Enter the dst_host_srv_diff_host_rate</label>
+	<br>
+		<textarea name=dst_host_srv_diff_host_rate rows='1'>0.04</textarea>
+	<br>
+
+	<label for=dst_host_serror_rate>Enter the dst_host_serror_rate</label>
+	<br>
+		<textarea name=dst_host_serror_rate rows='1'>0.03</textarea>
+	<br>
+
+	<label for=dst_host_srv_serror_rate>Enter the dst_host_srv_serror_rate</label>
+	<br>
+		<textarea name=dst_host_srv_serror_rate rows='1'>0.01</textarea>
+	<br>
+
+	<label for=dst_host_rerror_rate>Enter the dst_host_rerror_rate</label>
+	<br>
+		<textarea name=dst_host_rerror_rate rows='1'>0.0</textarea>
+	<br>
+
+	<label for=dst_host_srv_rerror_rate>Enter the dst_host_srv_rerror_rate</label>
+	<br>
+		<textarea name=dst_host_srv_rerror_rate rows='1'>0.01</textarea>
+	<br>
+	
+	<br>
+   <input type="submit" value="Submit">
+  </form>
+</div>
+</body>
+</html>
